@@ -1,0 +1,168 @@
+/* Modify and implement a background */
+.Background {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/src/wallpaperflare.com_wallpaper.jpg);
+    background-size: cover;
+    /* Adjust the background image */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    /* center vertically */
+}
+
+.Background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    pointer-events: none;
+}
+
+.Background-h {
+    margin-left: 90px;
+    /* Gives margin to the left */
+    text-align: left;
+    /* Align text to the left */
+    color: white;
+    /* Text Color */
+}
+
+.Background-h h1,
+.Background-h h2 {
+    margin: 0;
+    /* Remove default margins */
+    font-size: 70px;
+    line-height: 0.9;
+    /* Adjust the line height to remove any extra space */
+}
+
+.Background-h h1 {
+    margin-left: -6px;
+    /* Implements the negative value to adjust the H1 */
+}
+
+.Background-h h3 {
+    letter-spacing: 6px; /* Ajusta este valor según tus preferencias */
+    margin: 0;
+    line-height: 2;
+}
+
+/* -------------------------- */
+
+/* Icons */
+.container-Icons {
+    position: absolute;
+    bottom: 40px;
+    /* Adjust the height from the bottom */
+    /* Creates a layout in which the child elements are stacked vertically one below the other */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Gives margin to the left */
+    margin-left: 90px;
+}
+
+/* Icons */
+.Icons i {
+    margin-right: 5px;
+    /* Space between icons */
+    font-size: 17px;
+    /* Font Size */
+}
+
+/* Implements a font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* -------------------------- */
+
+/* Gives values to the navbar */
+.navbar {
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    font-size: 15px;
+    margin: 8px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-right {
+    color: #fff;
+}
+
+.toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Values for responsive */
+@media screen and (max-width: 768px) {
+
+    /* Navbar */
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 40px;
+        left: 0;
+        padding: 50px 20px 50px 20px;
+        background-color: rgba(0, 0, 0, 0.171);
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li a{
+        font-size: 20px;
+    }
+
+    .navbar ul.active {
+        display: flex;
+        height: 100px;
+    }
+
+    .toggle-button {
+        display: block;
+        position: fixed;
+        right: 20px;
+    }
+
+    /* Background */
+    .Background-h {
+        margin-left: 5vw;
+    }
+
+    .container-Icons {
+        margin-left: 5vw;
+    }
+}
